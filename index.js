@@ -13,6 +13,7 @@ const requestLogger = (request, response, next) => {
 
 app.use(express.json());
 app.use(cors());
+app.use(express.static("dist"));
 
 const generateId = () => {
   const maxId = notes.length > 0 ? Math.max(...notes.map((n) => n.id)) : 0;
